@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/libdb
+    username: libuser
+    password: libpass
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  flyway:
+    enabled: true
+
+server:
+  port: 20550
+
+jwt:
+  secret: "123456789123456789123456789123456789123456789"
+  expiration-ms: 86400000
+
+cors:
+  allowed-origins: http://localhost:5173
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        orm:
+          jdbc:
+            bind: TRACE
